@@ -1,13 +1,13 @@
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../services/hero.service';
+import { HeroService } from '../services/hero/hero.service';
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../interfaces/hero';
 
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
-  styleUrls: [ './hero-detail.component.css' ]
+  styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | undefined;
@@ -16,7 +16,7 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getHero();
